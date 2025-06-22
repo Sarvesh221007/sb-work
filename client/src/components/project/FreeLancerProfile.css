@@ -1,0 +1,44 @@
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-header h2 {
+  font-weight: 700;
+}
+
+.profile-info p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.reviews-section h4 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.review-card {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-card h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.review-rating {
+  color: #f5c518;
+  font-weight: bold;
+}

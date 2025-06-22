@@ -1,0 +1,23 @@
+/* Ensure full height for layout */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base body styling */
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Main layout container to allow scrolling without footer overlapping */
+main {
+  flex: 1 0 auto;
+  min-height: calc(100vh - 140px); /* ensures content fills screen */
+  background-color: #fff;
+}
