@@ -1,7 +1,8 @@
 import axios from 'axios';
+require('dotenv').config();
 
 const api = axios.create({
-  baseURL: 'https://sb-backend.onrender.com/api', // ← use actual backend Render URL
+  baseURL: process.env.REACT_APP_API_URL, // ← use actual backend Render URL
   withCredentials: true,
 });
 
