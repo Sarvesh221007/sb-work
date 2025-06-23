@@ -17,26 +17,25 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(express.json()); // Needed to parse JSON
-
+app.use(express.json()); 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-// Serve uploaded files (if any)
+// Static files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// API routes
+// ✅ Route Mounts
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/users', userRoutes);
 
-// For testing server
+// Test endpoint
 app.get('/api', (req, res) => res.send('✅ SB Works API running'));
 
-// 👉 Serve frontend build (IMPORTANT for global access)
+// ✅ Serve frontend build
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 
