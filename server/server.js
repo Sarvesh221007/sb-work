@@ -16,13 +16,11 @@ const userRoutes = require('./routers/userRoutes');
 app.use(cors());
 app.use(express.json()); // Needed to parse JSON
 
-// DB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error('MongoDB connection error:', err));
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
 
 // Serve static files from the React app
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
